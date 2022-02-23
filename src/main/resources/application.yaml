@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: config-client
+  config:
+    import: configserver:http://localhost:8888
+  profiles:
+    active: dev
+  cloud:
+    config:
+      token: roottoken
+encrypt:
+  key: secret
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - refresh
